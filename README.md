@@ -1,6 +1,6 @@
 # Code Server Font Patch
 
-This patchs [code-server](cdr/code-server) to enable load fonts (IBM Plex Mono and Fira Mono For Powerline) in server.
+This patchs [code-server](https://github.com/cdr/code-server) to enable load fonts ([IBM Plex Mono](https://github.com/IBM/plex) and [Fira Mono For Powerline](https://github.com/powerline/fonts)) in server.
 
 ## Installation
 - Clone this repository.
