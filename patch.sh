@@ -6,7 +6,7 @@ else
 fi
 
 WORKBENCH_PATH="$CODE_SERVER_PATH/lib/vscode/out/vs/workbench"
-WORKBENCH_CSS_PATH="$WORKBENCH_PATH/workbench.web.api.css"
+WORKBENCH_CSS_PATH="$WORKBENCH_PATH/workbench.web.main.css"
 
 # Check if it is valid path
 if [ -z "$CODE_SERVER_PATH" -o ! -d "$WORKBENCH_PATH" ]; then
@@ -14,12 +14,12 @@ if [ -z "$CODE_SERVER_PATH" -o ! -d "$WORKBENCH_PATH" ]; then
   exit 1
 fi
 
-# Copy fonts to $WORKBENCH_PATH
-cp -rn ./resources/fonts "$WORKBENCH_PATH/"
+if ! grep -q "/* ::CUSTOM VSCODE FONTS:: */" "$WORKBENCH_CSS_PATH"; then
+  # Copy fonts to $WORKBENCH_PATH
+  cp -rn ./resources/fonts "$WORKBENCH_PATH/"
 
-# Prepend fonts.css to workbench.web.api.css
-if ! grep -q FiraMonoForPowerline "$WORKBENCH_CSS_PATH"; then
-  echo "$(cat ./resources/fonts.css)\n$(cat $WORKBENCH_CSS_PATH)" > $WORKBENCH_CSS_PATH
+  # Prepend fonts.css to workbench.web.api.css
+  cat ./resources/fonts.css >> $WORKBENCH_CSS_PATH
 fi
 
 echo "Done! Have fun!"

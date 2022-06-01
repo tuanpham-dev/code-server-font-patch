@@ -1,6 +1,6 @@
 # Code Server Font Patch
 
-This patchs [code-server](https://github.com/cdr/code-server) to enable load fonts ([IBM Plex Mono](https://github.com/IBM/plex) and [Fira Mono For Powerline](https://github.com/powerline/fonts)) in server.
+This patchs [code-server](https://github.com/cdr/code-server) to enable load fonts [Fira Code](https://github.com/tonsky/FiraCode) in server.
 
 ## Installation
 
@@ -22,6 +22,6 @@ sudo ./patch.sh [path-to-code-server]
 You may need to set font family in code-server settings:
 
 ```
-"editor.fontFamily": "'IBM Plex Mono', Consolas, 'Courier New', monospace",
-"terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'IBM Plex Mono', Consolas, 'Courier New', monospace",
+"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+"terminal.integrated.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
 ```
